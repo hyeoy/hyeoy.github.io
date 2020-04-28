@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo + NexT 安装及配置</title>
+    <url>/archives/683474b3.html</url>
+    <content><![CDATA[<blockquote>
+<p>Hexo + NexT 博客搭建及常用标签</p>
+</blockquote>
+<a id="more"></a>
+
+<div class="tabs" id="environment"><ul class="nav-tabs"><li class="tab active"><a href="#environment-1">环境信息</a></li><li class="tab"><a href="#environment-2">插件依赖</a></li></ul><div class="tab-content"><div class="tab-pane active" id="environment-1"><p>nodejs : 13.10.1<br>git : 2.25.1.windows.1<br>hexo : 4.2.0<br>hexo-cli : 3.1.0<br>hexo-theme-next : 7.8.0</p></div><div class="tab-pane" id="environment-2"><p>“hexo-abbrlink”: “^2.0.5”,<br>“hexo-asset-image”: “^1.0.0”,<br>“hexo-generator-searchdb”: “^1.3.0”,<br>“hexo-symbols-count-time”: “^0.7.1”</p></div></div></div>
+
+<hr>
+<div class="note success no-icon">
+            <p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">Hexo 中文版官方文档</a></p>
+          </div>
+
+<h1 id="Hexo-安装及配置"><a href="#Hexo-安装及配置" class="headerlink" title="Hexo 安装及配置"></a>Hexo 安装及配置</h1><h2 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br><span class="line">$ hexo init</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+
+<p>Hexo 3.0 把服务器独立成了个别模块，必须先安装 <a href="https://hexo.io/zh-cn/docs/server" target="_blank" rel="noopener">hexo-server</a> 才能使用</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-server --save</span><br></pre></td></tr></table></figure>
+
+<h2 id="草稿"><a href="#草稿" class="headerlink" title="草稿"></a>草稿</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ hexo new draft &lt;title&gt; # 新建草稿</span><br><span class="line">$ hexo publish &lt;title&gt;   # 将草稿移动到 source&#x2F;_posts 文件夹</span><br></pre></td></tr></table></figure>
+
+<h2 id="Front-matter-模板"><a href="#Front-matter-模板" class="headerlink" title="Front-matter 模板"></a>Front-matter 模板</h2><figure class="highlight markdown"><figcaption><span>scaffolds/post.md</span></figcaption><table><tr><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#123;&#123; title &#125;&#125;</span><br><span class="line">date: &#123;&#123; date &#125;&#125;</span><br><span class="line">tags:</span><br><span class="line">categories:</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+
+<h2 id="反引号代码块"><a href="#反引号代码块" class="headerlink" title="反引号代码块"></a>反引号代码块</h2><p>代码块左上角会显示添加的 title 等参数</p>
+<p>``` [language] [title] [url] [link text] code snippet ```</p>
+<p>此处是怎么让 ``` 不转义的：在最前面添加 \</p>
+<h2 id="资源文件夹"><a href="#资源文件夹" class="headerlink" title="资源文件夹"></a>资源文件夹</h2><figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span> <span class="comment"># 启动 Asset 文件夹</span></span><br></pre></td></tr></table></figure>
+
+<p><a href="https://github.com/rozbo/hexo-abbrlink" target="_blank" rel="noopener">安装 hexo-abbrlink</a></p>
+<div class="tabs" id="hexo-abbrlink"><ul class="nav-tabs"><li class="tab active"><a href="#hexo-abbrlink-1">安装</a></li><li class="tab"><a href="#hexo-abbrlink-2">站点配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="hexo-abbrlink-1"><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="hexo-abbrlink-2"><figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">permalink:</span> <span class="string">archives/:abbrlink.html</span></span><br><span class="line"><span class="attr">abbrlink:</span></span><br><span class="line">  <span class="attr">alg:</span> <span class="string">crc32</span>  <span class="comment"># 算法：crc16(default) and crc32</span></span><br><span class="line">  <span class="attr">rep:</span> <span class="string">hex</span>    <span class="comment"># 进制：dec(default) and hex</span></span><br></pre></td></tr></table></figure></div></div></div>
+
+<p><a href="https://github.com/xcodebuild/hexo-asset-image" target="_blank" rel="noopener">安装 hexo-asset-image</a></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-asset-image --save</span><br></pre></td></tr></table></figure>
+
+<h1 id="标签插件"><a href="#标签插件" class="headerlink" title="标签插件"></a><a href="https://hexo.io/zh-cn/docs/tag-plugins" target="_blank" rel="noopener">标签插件</a></h1><h2 id="引用块"><a href="#引用块" class="headerlink" title="引用块"></a>引用块</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% blockquote [author[, source]] [link] [source_link_title] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="链接"><a href="#链接" class="headerlink" title="链接"></a>链接</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% link text url [external] [title] %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="内部代码"><a href="#内部代码" class="headerlink" title="内部代码"></a><a href="https://hexo.io/zh-cn/docs/tag-plugins#Include-Code" target="_blank" rel="noopener">内部代码</a></h2><p>插入配置文件中 <code>code_dir</code> 文件夹内的代码文件，默认是 <code>source/downloads/code</code> </p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% include_code [title] [lang:language] [from:line] [to:line] path&#x2F;to&#x2F;file %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Youtube-视频"><a href="#Youtube-视频" class="headerlink" title="Youtube 视频"></a>Youtube 视频</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% youtube video_id %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="引用文章"><a href="#引用文章" class="headerlink" title="引用文章"></a>引用文章</h2><p>默认对文章标题的特殊字符进行转义，使用<code>escape</code>选项禁止</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% post_link filename [title] [escape] %&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<div class="note success no-icon">
+            <p><a href="https://theme-next.org/docs/getting-started/" target="_blank" rel="noopener">NexT 官方文档</a></p>
+          </div>
+
+<h1 id="NexT-安装及配置"><a href="#NexT-安装及配置" class="headerlink" title="NexT 安装及配置"></a>NexT 安装及配置</h1><h2 id="安装-NexT"><a href="#安装-NexT" class="headerlink" title="安装 NexT"></a>安装 NexT</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git clone https:&#x2F;&#x2F;github.com&#x2F;theme-next&#x2F;hexo-theme-next themes&#x2F;next</span><br></pre></td></tr></table></figure>
+
+<h2 id="新建-tags-栏"><a href="#新建-tags-栏" class="headerlink" title="新建 tags 栏"></a>新建 tags 栏</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight markdown"><figcaption><span>source/tags/index.md</span></figcaption><table><tr><td class="code"><pre><span class="line">title: 标签</span><br><span class="line">date: 2020-04-28 09:26:11</span><br><span class="line">type: "tags"</span><br></pre></td></tr></table></figure>
+
+<h2 id="本地搜索"><a href="#本地搜索" class="headerlink" title="本地搜索"></a>本地搜索</h2><div class="tabs" id="local-search"><ul class="nav-tabs"><li class="tab active"><a href="#local-search-1">安装</a></li><li class="tab"><a href="#local-search-2">Hexo 配置</a></li><li class="tab"><a href="#local-search-3">NexT 配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="local-search-1"><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="local-search-2"><figure class="highlight yml"><figcaption><span>_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">search:  path: search.xml  field: post  format: html  limit:</span> <span class="number">10000</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="local-search-3"><figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></div></div></div>
+
+<h2 id="查看大图-Fancybox-3-x"><a href="#查看大图-Fancybox-3-x" class="headerlink" title="查看大图 Fancybox 3.x"></a>查看大图 Fancybox 3.x</h2><div class="tabs" id="fancybox"><ul class="nav-tabs"><li class="tab active"><a href="#fancybox-1">安装</a></li><li class="tab"><a href="#fancybox-2">NexT 配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="fancybox-1"><figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">vendors:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line">  <span class="attr">jquery:</span> <span class="string">//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js</span></span><br><span class="line">  <span class="attr">fancybox:</span> <span class="string">//cdn.jsdelivr.net/npm/fancybox@3/dist/js/jquery.fancybox.pack.js</span></span><br><span class="line">  <span class="attr">fancybox_css:</span> <span class="string">//cdn.jsdelivr.net/npm/fancybox@3/dist/css/jquery.fancybox.min.css</span></span><br><span class="line">  <span class="string">...</span></span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="fancybox-2"><figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">fancybox:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure></div></div></div>
+
+<h2 id="阅读字数和时长"><a href="#阅读字数和时长" class="headerlink" title="阅读字数和时长"></a>阅读字数和时长</h2><p><a href="https://github.com/theme-next/hexo-symbols-count-time" target="_blank" rel="noopener">hexo-symbols-count-time 插件</a></p>
+<div class="tabs" id="count-time"><ul class="nav-tabs"><li class="tab active"><a href="#count-time-1">安装</a></li><li class="tab"><a href="#count-time-2">NexT 配置</a></li></ul><div class="tab-content"><div class="tab-pane active" id="count-time-1"><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-symbols-count-time</span><br></pre></td></tr></table></figure></div><div class="tab-pane" id="count-time-2"><figure class="highlight yml"><figcaption><span>next/_config.yml</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="attr">symbols_count_time:</span></span><br><span class="line">  <span class="attr">separated_meta:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_post:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">item_text_total:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">awl:</span> <span class="number">4</span></span><br><span class="line">  <span class="attr">wpm:</span> <span class="number">275</span></span><br></pre></td></tr></table></figure></div></div></div>
+
+<h2 id="小型代码块颜色修改"><a href="#小型代码块颜色修改" class="headerlink" title="小型代码块颜色修改"></a>小型代码块颜色修改</h2><figure class="highlight stylus"><figcaption><span>next/source/css/_variables/base.styl</span></figcaption><table><tr><td class="code"><pre><span class="line">$code-foreground                = $orange;</span><br><span class="line"><span class="variable">$code</span>-<span class="attribute">background</span>                = <span class="number">#f5f5f5</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="修改文章字体大小"><a href="#修改文章字体大小" class="headerlink" title="修改文章字体大小"></a>修改文章字体大小</h2><figure class="highlight stylus"><figcaption><span>next/source/css/_common/components/post/post.styl</span></figcaption><table><tr><td class="code"><pre><span class="line">+desktop-large() &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="variable">$font</span>-size-medium;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="标签插件-1"><a href="#标签插件-1" class="headerlink" title="标签插件"></a>标签插件</h1><h2 id="居中引用"><a href="#居中引用" class="headerlink" title="居中引用"></a>居中引用</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% cq %&#125;Something&#123;% endcq %&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote class="blockquote-center">
+            <i class="fa fa-quote-left"></i>
+            <p>Something</p>
+
+            <i class="fa fa-quote-right"></i>
+          </blockquote>
+
+<h2 id="标注"><a href="#标注" class="headerlink" title="标注"></a><a href="https://theme-next.org/docs/tag-plugins/note" target="_blank" rel="noopener">标注</a></h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% note [class] [no-icon] %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endnote %&#125;</span><br><span class="line"></span><br><span class="line">[class]   : default | primary | success | info | warning | danger.</span><br></pre></td></tr></table></figure>
+
+<div class="note success no-icon">
+            <p>success</p>
+          </div>
+
+<h2 id="Label"><a href="#Label" class="headerlink" title="Label"></a>Label</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% label [class]@Text %&#125;</span><br><span class="line"></span><br><span class="line">[class] : default | primary | success | info | warning | danger.</span><br></pre></td></tr></table></figure>
+
+<span class="label default">default 灰色</span> 、 <span class="label primary">primary 紫色</span> 、<span class="label success">success 绿色</span>、<span class="label info">info 蓝色</span>、<span class="label warning">warning 黄色</span>、<span class="label danger">danger 红色</span>
+
+<h2 id="Tabs"><a href="#Tabs" class="headerlink" title="Tabs"></a><a href="https://theme-next.org/docs/tag-plugins/tabs" target="_blank" rel="noopener">Tabs</a></h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% tabs unique name %&#125;</span><br><span class="line">&lt;!-- tab 标签 1 --&gt;</span><br><span class="line">内容 1</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 标签 2 --&gt;</span><br><span class="line">内容 2</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 标签 3 --&gt;</span><br><span class="line">内容 3</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+
+<div class="tabs" id="unique-name"><ul class="nav-tabs"><li class="tab active"><a href="#unique-name-1">标签 1</a></li><li class="tab"><a href="#unique-name-2">标签 2</a></li><li class="tab"><a href="#unique-name-3">标签 3</a></li></ul><div class="tab-content"><div class="tab-pane active" id="unique-name-1"><p>内容 1</p></div><div class="tab-pane" id="unique-name-2"><p>内容 2</p></div><div class="tab-pane" id="unique-name-3"><p>内容 3</p></div></div></div>
+
+<h2 id="PDF下载"><a href="#PDF下载" class="headerlink" title="PDF下载"></a>PDF下载</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% pdf url [height] %&#125;</span><br><span class="line"></span><br><span class="line">[url] : https:&#x2F;&#x2F;example.com&#x2F;sample.pdf | &#x2F;path&#x2F;to&#x2F;your&#x2F;file.pdf</span><br></pre></td></tr></table></figure>
+
+<h2 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% video url %&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Mermaid"><a href="#Mermaid" class="headerlink" title="Mermaid"></a>Mermaid</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% mermaid type %&#125;</span><br><span class="line">&#123;% endmermaid %&#125;</span><br><span class="line"></span><br><span class="line">[type] : graph TD | graph LR | graph TD | sequenceDiagram | gantt | gitGraph:</span><br></pre></td></tr></table></figure>
+
+<h2 id="按钮"><a href="#按钮" class="headerlink" title="按钮"></a>按钮</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#123;% btn url, text, icon [class], [title] %&#125;</span><br><span class="line">eg. &#123;% btn #, 按钮 , home fa-fw , 这是按钮 %&#125;</span><br></pre></td></tr></table></figure>
+
+<a class="btn" href="#" title="这是按钮">
+            <i class="fa fa-home fa-fw"></i>按钮
+          </a>
+
+<h1 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h1><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;mark&gt;高亮&lt;&#x2F;mark&gt;</span><br></pre></td></tr></table></figure>
+
+<p><mark>高亮</mark></p>
+<hr>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><blockquote>
+<p><a href="http://lyxf.live/posts/2063/#%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2%E5%9F%BA%E6%9C%AC%E4%BF%A1%E6%81%AF" target="_blank" rel="noopener">hexo-Next主题美化</a></p>
+</blockquote>
+]]></content>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+</search>
