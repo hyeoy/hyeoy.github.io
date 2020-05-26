@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>解决 OneNote 中英文输入字体不一致的问题</title>
+    <title>解决 OneNote 中英文输入字体时不一致的问题</title>
     <url>/archives/4100fdb5.html</url>
     <content><![CDATA[<h1 id="1-解决方案"><a href="#1-解决方案" class="headerlink" title="1. 解决方案"></a>1. 解决方案</h1><p>发现一个字体格式 <code>Microsoft YaHei Mono</code>，在中文时使用微软雅黑，在英文时使用 Consolas。因此将默认字体切换为 Mono，输入中文后再输入的英文会是 Consolas。</p>
-<p>但是直接输入英文，OneNote 会切换为 Calibri，所以需要将 Calibri 字体替换为 Mono。</p>
+<p>但是直接输入英文，OneNote 会切换为 Calibri，所以需要将 Calibri 字体替换为 Mono。<a id="more"></a></p>
 <h1 id="2-工具准备"><a href="#2-工具准备" class="headerlink" title="2. 工具准备"></a>2. 工具准备</h1><ul>
 <li>Mono 字体，<a href="https://github.com/hyeoy/hyeoy.github.io/blob/master/archives/4100fdb5/MSYHMONO.ttf" target="_blank" rel="noopener">文件链接</a></li>
 <li>FontCreator 软件，用于修改字体名称，<a href="https://www.high-logic.com/font-editor/fontcreator/download-confirmation" target="_blank" rel="noopener">下载链接</a></li>
@@ -21,7 +21,7 @@
 </ul>
 </li>
 </ul>
-<h1 id="OneNote-操作"><a href="#OneNote-操作" class="headerlink" title="OneNote 操作"></a>OneNote 操作</h1><p>点击 文件 》选项 》常规，修改默认字体为 Microsoft YaHei Mono，之后中文字体会使用微软雅黑，英文字体使用 Consolas。</p>
+<h1 id="4-OneNote-操作"><a href="#4-OneNote-操作" class="headerlink" title="4. OneNote 操作"></a>4. OneNote 操作</h1><p>点击 文件 》选项 》常规，修改默认字体为 Microsoft YaHei Mono，之后中文字体会使用微软雅黑，英文字体使用 Consolas。</p>
 <h1 id="5-参考资料"><a href="#5-参考资料" class="headerlink" title="5. 参考资料"></a>5. 参考资料</h1><p>[1] <a href="https://blog.csdn.net/hanhaixingchen/article/details/52440794" target="_blank" rel="noopener">OneNote同时设置中英文字体显示（雅黑+Consolas）</a><br>[2] <a href="https://blog.csdn.net/hanhaixingchen/article/details/52440704" target="_blank" rel="noopener">修改系统字体文件</a><br>[3] <a href="https://www.cnblogs.com/ShaYeBlog/p/6627206.html" target="_blank" rel="noopener">OneNote无法同时设置中英文字体设置解决办法</a><br>[4] <a href="https://www.52pojie.cn/thread-1095149-1-1.html" target="_blank" rel="noopener">FontCreator 12 professional license</a></p>
 ]]></content>
       <categories>
