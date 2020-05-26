@@ -31,4 +31,19 @@
         <tag>OneNote</tag>
       </tags>
   </entry>
+  <entry>
+    <title>OneNote 关闭自动编号</title>
+    <url>/archives/550d9d00.html</url>
+    <content><![CDATA[<h1 id="1-解决方案"><a href="#1-解决方案" class="headerlink" title="1. 解决方案"></a>1. 解决方案</h1><p>输入 <code>1.</code> 后再键入空格会自动编号，如何关闭自动编号的功能？<a id="more"></a></p>
+<p>点击 文件 》选项 》高级，取消勾选下面两项</p>
+<p><img src="/archives/550d9d00/image-20200526150646034.png" alt></p>
+<h1 id="2-参考资料"><a href="#2-参考资料" class="headerlink" title="2. 参考资料"></a>2. 参考资料</h1><p>[1] <a href="https://www.office26.com/onenote/onenote_11212.html" target="_blank" rel="noopener">OneNote 如何关闭自动项目符号和编号</a></p>
+]]></content>
+      <categories>
+        <category>Windows</category>
+      </categories>
+      <tags>
+        <tag>OneNote</tag>
+      </tags>
+  </entry>
 </search>
