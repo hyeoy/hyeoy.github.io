@@ -6,7 +6,7 @@
     <content><![CDATA[<h1 id="1-解决方案"><a href="#1-解决方案" class="headerlink" title="1. 解决方案"></a>1. 解决方案</h1><p>发现一个字体格式 <code>Microsoft YaHei Mono</code>，在中文时使用微软雅黑，在英文时使用 Consolas。因此将默认字体切换为 Mono，输入中文后再输入的英文会是 Consolas。</p>
 <p>但是直接输入英文，OneNote 会切换为 Calibri，所以需要将 Calibri 字体替换为 Mono。</p>
 <h1 id="2-工具准备"><a href="#2-工具准备" class="headerlink" title="2. 工具准备"></a>2. 工具准备</h1><ul>
-<li>Mono 字体</li>
+<li>Mono 字体，<a href="https://github.com/hyeoy/hyeoy.github.io/blob/master/archives/4100fdb5/MSYHMONO.ttf" target="_blank" rel="noopener">文件链接</a></li>
 <li>FontCreator 软件，用于修改字体名称，<a href="https://www.high-logic.com/font-editor/fontcreator/download-confirmation" target="_blank" rel="noopener">下载链接</a></li>
 </ul>
 <h1 id="3-字体替换"><a href="#3-字体替换" class="headerlink" title="3. 字体替换"></a>3. 字体替换</h1><ul>
@@ -17,7 +17,7 @@
 <li>将 Mono 字体拖入到 FontCreator 界面中</li>
 <li>点击 FontProperties，修改 Font Family 为 Calibri<br><img src="/archives/4100fdb5/clip_image001.png" alt></li>
 <li>点击 File 》Export Font 》Export TrueType/OpenType Font 导出修改后的字体 </li>
-<li>右键安装导出的字体</li>
+<li>右键安装导出的字体，<a href="https://github.com/hyeoy/hyeoy.github.io/blob/master/archives/4100fdb5/MSYHMONO.otf" target="_blank" rel="noopener">文件链接</a></li>
 </ul>
 </li>
 </ul>
