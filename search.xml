@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>onenote-replace-calibri-with-mono</title>
+    <title>解决 OneNote 中英文输入字体不一致的问题</title>
     <url>/archives/4100fdb5.html</url>
     <content><![CDATA[<h1 id="1-解决方案"><a href="#1-解决方案" class="headerlink" title="1. 解决方案"></a>1. 解决方案</h1><p>发现一个字体格式 <code>Microsoft YaHei Mono</code>，在中文时使用微软雅黑，在英文时使用 Consolas。因此将默认字体切换为 Mono，输入中文后再输入的英文会是 Consolas。</p>
 <p>但是直接输入英文，OneNote 会切换为 Calibri，所以需要将 Calibri 字体替换为 Mono。</p>
